@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/result.css">
+    <title>ブログカード作成サイト</title>
+</head>
+<body>
+    <div class="title">
+        <h1>ブログカード作成サイト</h1>
+    </div>
+    <div class="create">
+        <h3>URL</h3>
+        <input type="text" value="{{ session['url'] }}" style="width: 400px;">
+        <h3>タイトル</h3>
+        <input type="text" value="{{ session['title'] }}" style="width: 400px;">
+        <h3>概要</h3>
+        <textarea name="content" cols="60" rows="5" style="resize: none;">{{ session['content'] }}</textarea>
+        <h3>画像パス</h3>
+        <input type="text" value="{{ session['img'] }}" style="width: 400px;">
+        <h3>HTML</h3>
+        <textarea name="html" cols="60" rows="15" style="resize: none;">{{ session['html'] }}</textarea>
+    </div>
+    <div class="preview">
+        <h3>プレビュー</h3>
+        {{ session['html']|safe }}
+    </div>
+</body>
+</html
